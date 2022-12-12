@@ -1,0 +1,233 @@
+/* Selctors */
+h1,
+h2,
+p {
+  color: rgb(121, 121, 4);
+}
+
+span {
+  color: red;
+}
+
+#myid {
+  width: 241px;
+  height: 60px;
+  font-family: 'Zen Dots', cursive;
+  box-shadow: 3px 3px 6px #00000029;
+}
+
+.myclass {
+  color: saddlebrown;
+  background-color: rgb(243, 161, 150);
+  opacity: 1;
+  border: 1px solid bisque;
+  /* this are my comments  */
+}
+
+* {
+  color: rgb(99, 7, 7);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* box-model */
+.bgimg {
+  /* padding: 25px;
+  border-style: dotted solid double dashed;
+  border-width: 5px 2px 3px 1px;
+  border-color: chocolate;
+  border-radius: 25px; */
+  border: 2px dashed red;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  padding: 5px 2px 0px 1px;
+  text-align: center;
+  background-color: darkorange;
+  border-radius: 10px 2px 5px 20px;
+  box-shadow: 10px 10px 5px rgb(202, 200, 200);
+  text-shadow: 5px 5px 2px rgb(190, 24, 24);
+}
+
+/* text and font styles */
+.mytext {
+  color: #863a6f;
+  border: 1px solid rgb(88, 88, 0);
+  text-align: center;
+  text-transform: lowercase;
+  font-family: "Rubik Distressed", cursive;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+a:link {
+  color: red;
+}
+a:visited {
+  color: rgba(170, 0, 0, 0.658);
+}
+a:hover {
+  color: rgb(219, 164, 12);
+}
+
+a:active {
+  color: blue;
+}
+
+.pos {
+  border: 2px solid black;
+  background-color: olive;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  z-index: -1;
+}
+
+.ddemo {
+  max-width: 1000px;
+  border: 2px solid black;
+  background-color: burlywood;
+  display: block;
+  margin: 5px;
+  position: relative;
+}
+
+.overflow {
+  height: 200px;
+  max-width: 150px;
+  background-color: rgb(25, 196, 202);
+  overflow: auto;
+  /* float: right; */
+}
+
+.center {
+  width: 200px;
+  height: 100px;
+  margin: auto;
+}
+
+.centerpos {
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  left: 38%;
+}
+
+.combi span {
+  color: blue;
+}
+
+.combi > span {
+  color: #ee32b5;
+}
+
+.psuedo {
+  background-color: red;
+  width: 100px;
+}
+
+.psuedo:hover {
+  background-color: rgb(72, 255, 102);
+}
+
+.psuedo div:first-child {
+  border: 1px solid black;
+}
+.psuedo div:last-child {
+  border: 1px solid black;
+}
+
+.psuedo div:nth-child(odd) {
+  background-color: rgb(235, 217, 217);
+}
+
+.psuedo > div::before {
+  content: "$";
+}
+.psuedo > div::after {
+  content: "^";
+}
+
+.transforms {
+  margin-top: 20px;
+  height: 100px;
+  width: 100px;
+  background-color: mediumvioletred;
+  transform: translate(50px, 10px) rotate(45deg) rotateZ(90deg) scale(1, 1)
+    skew(20deg, 10deg);
+  transition: width 1s, height 2s;
+}
+
+.transforms:hover {
+  width: 200px;
+  height: 200px;
+  transition: width 1s, height 2s;
+}
+
+.flexbox {
+  width: 200px;
+  height: 200px;
+  background-color: thistle;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexbox > div {
+  height: 40px;
+  width: 40px;
+  background-color: wheat;
+}
+
+.wireframe {
+  width: 241px;
+  height: 60px;
+  border-radius: 25px;
+  background: transparent
+    linear-gradient(
+      180deg,
+      #fdfdfd 0%,
+      #fda5f9 100%,
+      #fdaaf8 100%,
+      #7f5d7c 100%
+    )
+    0% 0% no-repeat padding-box;
+  box-shadow: 3px 3px 6px #00000029;
+  text-align: center;
+  font: normal normal bold 31px/40px Roboto;
+  letter-spacing: 0px;
+  color: #420d80;
+  border: none;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  background-color: rgb(166, 122, 218);
+  column-gap: 10px;
+  row-gap: 10px;
+}
+.grid > div:nth-child(2) {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+.grid > div:nth-child(5) {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+.grid > div {
+  background-color: azure;
+}
+
+@media screen and (max-width: 480px) {
+  * {
+    color: rgb(48, 76, 238);
+  }
+  .ddemo {
+    background-color: rgb(180, 26, 121);
+  }
+}
