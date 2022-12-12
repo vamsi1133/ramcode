@@ -1,3 +1,5 @@
+
+
 // 9th dec
 let ram = {
   name: "ram",
@@ -68,3 +70,73 @@ const words = data.split(" ");
 console.log(words);
 
 console.log("original string:", myname);
+
+// arrays
+
+const a = ["ram", "vamsi", "raju", "ravi"];
+const b = ["ajay", "srinu"];
+const c = [...a];
+const points = [40, 100, 1, 5, 25, 10];
+
+print(a[2]);
+a[2] = "mohan";
+print(a[2]);
+print(a.length);
+print(a[a.length - 1]);
+print(Array.isArray(a));
+print(a.toString());
+
+print(a.push("krishna"));
+print(a.pop());
+
+print(a.unshift("krishna"));
+print(a.shift());
+
+// print(a.splice(1, 2));
+print(a.slice(1, 3));
+
+print(c.sort());
+print(c.reverse());
+print(points.sort((a, b) => a - b));
+// const c = a.concat(b);
+
+print(a);
+// print(c);
+
+// array iterations 
+const cars = [
+  { type: "Volvo", year: 2016 },
+  { type: "Saab", year: 2001 },
+  { type: "BMW", year: 2010 },
+];
+
+const nums = [1, 2, 3, 4, 5, 6, 7];
+
+nums.forEach((val, index) => {
+  val += 1;
+  console.log(val);
+});
+
+let arr = nums.map((val) => {
+  return val + 2;
+});
+
+let fil = nums.filter((val) => {
+  return val > 2;
+});
+
+let red = nums.reduce((acc, val) => {
+  return acc + val;
+});
+
+let res = nums
+  .map((val) => val * 3)
+  .filter((val) => val % 2 !== 0)
+  .reduce((acc, val) => acc + val);
+
+print(arr);
+print(fil);
+print(red);
+print(`result ${res}`);
+print(nums.includes(5));
+print(nums);
