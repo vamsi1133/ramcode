@@ -1,4 +1,6 @@
-
+const print = (data) => {
+  console.log(data);
+};
 
 // 9th dec
 let ram = {
@@ -103,7 +105,7 @@ print(points.sort((a, b) => a - b));
 print(a);
 // print(c);
 
-// array iterations 
+// array iterations
 const cars = [
   { type: "Volvo", year: 2016 },
   { type: "Saab", year: 2001 },
@@ -140,3 +142,170 @@ print(red);
 print(`result ${res}`);
 print(nums.includes(5));
 print(nums);
+
+// dates
+const today = new Date();
+const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+print(today);
+print(today.toString());
+print(today.getHours());
+print(today.getDate());
+print(days[today.getDay()]);
+print(today.getMilliseconds());
+print(today.getTime());
+today.setDate(13);
+print(today.getDate());
+
+// math
+const x = -6 / 5;
+print(x);
+print(Math.floor(x));
+print(Math.ceil(x));
+print(Math.abs(x));
+
+const randomMap = () => {
+  let x, y;
+  x = Math.ceil(Math.random() * 10);
+  y = Math.ceil(Math.random() * 10);
+  return [x, y];
+};
+
+print(randomMap());
+
+// if else statements
+
+const xc = 7;
+const yc = 3;
+const randomMap = () => {
+  let x, y;
+  x = Math.ceil(Math.random() * 10);
+  y = Math.ceil(Math.random() * 10);
+  if (x >= 7 && y <= 2) {
+    x = 6;
+    y = 4;
+  }
+
+  return [x, y];
+};
+
+print(randomMap());
+
+function max(a, b, c) {
+  if (a > b) {
+    if (a > c) {
+      return a;
+    } else {
+      return c;
+    }
+  } else {
+    if (b > c) {
+      return b;
+    } else {
+      return c;
+    }
+  }
+}
+print(max(23, 8, 10));
+
+const powerColor = (val) => {
+  if (val === 1) {
+    return "red";
+  } else if (val === -1) {
+    return "green";
+  } else {
+    return "black";
+  }
+};
+
+const powerSwitch = (val) => {
+  switch (val) {
+    case 1:
+      return "red";
+      break;
+    default:
+      return "black";
+  }
+};
+
+print(powerColor(-1));
+print(powerSwitch(1));
+
+// loops
+
+for (let i = 0; i < 100; i++) {
+  print("vamsi");
+}
+let i = 0;
+while (i < 100) {
+  print("vamsi" + i);
+  i++;
+}
+
+do {
+  print(i);
+  i++;
+} while (i < 0);
+
+let arr = ["volvo", "tata", "suzuki", "maruthi", "kia", "BMW", "Hyundai"];
+
+for (let i = 0; i < arr.length; i++) {
+  print(arr[i]);
+}
+
+let i = 0;
+
+while (i < arr.length) {
+  print(arr[i]);
+  i += 2;
+}
+// iterables sets and maps
+let str = "hello world";
+let arr = ["volvo", "tata", "suzuki", "maruthi", "kia", "BMW", "Hyundai"];
+let address = {
+  street: [5, 45, 56],
+  name: "xyz",
+  flat: 123,
+};
+
+delete address.street;
+print(address.street);
+for (let x in address) {
+  print(address[x]);
+}
+
+for (let x of arr) {
+  print(x);
+}
+
+for (let i = 0; i < arr.length; i++) {
+  print(arr[i]);
+}
+
+let myset = new Set([1, 2, 4, 2, 5, 1, 5]);
+myset.add(6);
+for (let x of myset.values()) {
+  print(x);
+}
+
+// error handling
+const testError = (a) => {
+  try {
+    return a * tryme(-4);
+  } catch (err) {
+    print(err.name);
+  } finally {
+    print("program done");
+  }
+};
+
+const tryme = (x) => {
+  if (x > 0) {
+    return 5;
+  } else {
+    throw { message: "value should not be less than 0", name: "custom error" };
+  }
+};
+
+print(testError(5));
+
+print("here");
