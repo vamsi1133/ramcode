@@ -309,3 +309,119 @@ const tryme = (x) => {
 print(testError(5));
 
 print("here");
+
+// this usage
+
+const person1 = {
+  firstName: "ram",
+  lastName: "kumar",
+  id: 5566,
+  person2: {
+    firstName: "John",
+    lastName: "Doe",
+    fullName: function () {
+      return this.firstName + " " + this.lastName;
+    },
+  },
+};
+
+print(person1.person2.fullName());
+
+// class and OOPS concept
+//  oops have inheritance, polymorphism, encapsulation, abstration
+class Alloy {
+  alloy() {
+    return "aluminium";
+  }
+}
+// class inheritance
+class Engine extends Alloy {
+  constructor(type) {
+    super();
+    this.type = type;
+  }
+  engineDetails() {
+    return this.type;
+  }
+  speed() {
+    return "100kmps";
+  }
+}
+class Car extends Engine {
+  constructor(type, name, num, model1) {
+    super(type);
+    this.name = name;
+    this.num = num;
+    this.model = model1;
+  }
+  static count = 0;
+
+  display() {
+    print(
+      this.name +
+        " " +
+        this.model +
+        " " +
+        this.engineDetails() +
+        " " +
+        this.speed() +
+        " " +
+        this.alloy()
+    );
+  }
+
+  static counter() {
+    this.count += 1;
+  }
+
+  // method overriding (polymorphism)
+  engineDetails() {
+    return "updated " + this.type;
+  }
+
+  cardetails() {
+    Car.counter();
+    this.display();
+  }
+}
+
+// entire car data is encapsulated in class CAR;
+let car1 = new Car("v4", "I20", 1, 2022);
+let car2 = new Car("v6", "swift", 2, 2022);
+let car3 = new Car("v4", "tiago", 12, 2019);
+
+car1.cardetails();
+car2.cardetails();
+car3.cardetails();
+print(Car.count);
+
+// rest parameter
+
+const sum = (...val) => {
+  let add = 0;
+  for (let x of val) {
+    add = add + x;
+  }
+  return add;
+};
+
+print(sum(4, 5, 6, 8, 25));
+//call, apply, bind
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  fullName: function (age) {
+    return this.firstName + " " + this.lastName + " " + age;
+  },
+};
+const person2 = {
+  firstName: "vamsi",
+  lastName: "varma",
+};
+// This will invoke method directly
+print(person.fullName.call(person2, 25));
+print(person.fullName.apply(person2, [26]));
+// this will bind method to p2
+const p2 = person.fullName.bind(person2);
+print(p2(27));
+print(p2(28));

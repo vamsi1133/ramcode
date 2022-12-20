@@ -2,24 +2,21 @@ const print = (data) => {
   console.log(data);
 };
 
-const testError = (a) => {
-  try {
-    return a * tryme(-4);
-  } catch (err) {
-    print(err.name);
-  } finally {
-    print("program done");
-  }
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  fullName: function (age) {
+    return this.firstName + " " + this.lastName + " " + age;
+  },
 };
-
-const tryme = (x) => {
-  if (x > 0) {
-    return 5;
-  } else {
-    throw { message: "value should not be less than 0", name: "custom error" };
-  }
+const person2 = {
+  firstName: "vamsi",
+  lastName: "varma",
 };
-
-print(testError(5));
-
-print("here");
+// This will invoke method directly
+print(person.fullName.call(person2, 25));
+print(person.fullName.apply(person2, [26]));
+// this will bind method to p2
+const p2 = person.fullName.bind(person2);
+print(p2(27));
+print(p2(28));
