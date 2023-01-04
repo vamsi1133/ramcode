@@ -425,3 +425,93 @@ print(person.fullName.apply(person2, [26]));
 const p2 = person.fullName.bind(person2);
 print(p2(27));
 print(p2(28));
+
+// callback functions
+
+const abc = (x, y) => {
+  x = x ** 2;
+  y(x);
+};
+
+const cb = (x) => {
+  print("This is from CB " + x);
+};
+
+const cb2 = (x) => {
+  print(x + 5);
+};
+
+abc(7, cb);
+abc(8, cb2);
+abc(9, (x) => {
+  print("from inline callback " + x);
+});
+
+const arr = [4, 5, 6, 67, 889];
+const double = (val) => val * 2;
+const arr2 = arr.map(double);
+
+print(arr2);
+
+// async coding
+
+const infloop = () => {
+  let val = 0;
+  for (let i = 0; i < 1000000000; i++) {
+    val += 1;
+  }
+  return val;
+};
+
+const displayData = (x) => {
+  document.getElementById("myid").innerHTML = x;
+};
+
+const getData = () => {
+  let x = 0;
+  console.log("before timer");
+
+  setInterval(() => {
+    x += 5;
+    displayData(x);
+  }, 2000);
+
+  setTimeout(() => {
+    x = 500;
+    displayData(x);
+  }, 1000);
+
+  console.log("after timer");
+};
+
+// promises
+let prom = new Promise((resolve, reject) => {
+  if (0) {
+    setTimeout(() => resolve(100), 5000);
+  } else {
+    reject("some error");
+  }
+});
+prom.then((val) => displayData(val)).catch((err) => displayData(err));
+
+const getData = () => {
+  fetch("https://6386f493e399d2e473f07b68.mockapi.io/api/user")
+    .then((res) => res.json())
+    .then((data) => {
+      displayData(data);
+    })
+    .catch((err) => console.log(err));
+};
+
+// async await
+const getData = async () => {
+  try {
+    let res = await fetch(
+      "https://6386f493e399d2e473f07b68.mockapi.io/api/user"
+    );
+    let data = await res.json();
+    displayData(data);
+  } catch (err) {
+    displayData(err);
+  }
+};
