@@ -11,7 +11,10 @@ const changeColor = (element, color) => {
   element.style.color = color;
 };
 
-// btnElement.onclick = changeColor;
+btnElement.onclick = () => {
+  localStorage.setItem("user", "ram");
+  sessionStorage.setItem("user2", "vamsi");
+};
 
 console.log(rootElement);
 console.log(classElement);
@@ -31,3 +34,11 @@ resultElement.addEventListener("mouseover", (event) => {
 resultElement.addEventListener("mouseleave", (event) => {
   changeColor(resultElement, "red");
 });
+
+const getWidthAndHeight = () => {
+  const h = window.innerHeight;
+  const w = window.innerWidth;
+  console.log(h, w);
+  console.log(window.location.hostname);
+  // window.history.back();
+};

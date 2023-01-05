@@ -1,0 +1,9 @@
+{
+  "employe": {
+    "name": "vamsi",
+    "address": {
+      "pin": 54540
+    },
+    "emp": [33, 44, 56]
+  }
+}
